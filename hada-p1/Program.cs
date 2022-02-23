@@ -16,9 +16,10 @@ namespace hada_p1
                 string respuesta;
                 string numero;
                 double valor;
-                Console.WriteLine("Que unidad quieres convertir Segundos o Minutos? (s/m)");
+                Console.WriteLine("Que unidad quieres convertir Segundos o Minutos o horas? (s/m/h)");
                 respuesta = Console.ReadLine();
-                if (respuesta=="s") {
+                if (respuesta=="s")
+                {
                     Console.WriteLine("Ahora introduce el valor que deseas cambiar >=0");
                     numero = Console.ReadLine();
                     valor = double.Parse(numero);
@@ -35,7 +36,18 @@ namespace hada_p1
                     }
                     else
                     {
-                        Console.WriteLine("Entrad incorrecta");
+                        if (respuesta == "h")
+                        {
+                            Console.WriteLine("Ahora introduce el valor que deseas cambiar >=0");
+                            numero = Console.ReadLine();
+                            valor = double.Parse(numero);
+                            Console.WriteLine(HadaP1.Hours2Minutes (valor));
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Entrad incorrecta");
+                        }
+                            
                     }
                 }
                 do
